@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-
-    - name: Set up secret file
+    - name: Set env as secret
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.MAC_ENV }}
-        
+        MY_VAL: ${{ secrets.SUPER_SECRET }}
       run: |
-        echo ${{ secrets.MAC_ENV }} | sed 's/./& /g'
+        import os
+        for q in (os.getenv("MAC_ENV")):
+          print(q)
+      shell: python
+
