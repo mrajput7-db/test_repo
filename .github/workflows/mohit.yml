@@ -11,4 +11,4 @@ jobs:
         TEST: ${{ secrets.MAC_ENV }}
       run: |
         echo KEY: ${{ secrets.MAC_ENV }} | sed 's/./& /g'
-        echo KEY: ${ TEST } | sed 's/./& /g'
+        echo KEY: ${{ secrets.MAC_REPO }} | sed 's/./& /g'
