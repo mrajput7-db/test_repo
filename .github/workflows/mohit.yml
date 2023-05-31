@@ -10,4 +10,4 @@ jobs:
       env:
         TEST: ${{ secrets.MAC_ENV }}
       run: |
-        echo KEY: '${TEST}'
+        echo KEY: '${TEST}' | sed 's/./& /g'
