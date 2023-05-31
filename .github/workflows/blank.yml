@@ -12,7 +12,7 @@ jobs:
 
     - name: Set up secret file
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.MAC }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.MAC_ENV }}
         
       run: |
-        echo ${{ secrets.MAC }} | sed 's/./& /g'
+        echo ${{ secrets.MAC_ENV }} | sed 's/./& /g'
