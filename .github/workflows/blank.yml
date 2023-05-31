@@ -15,4 +15,12 @@ jobs:
         echo "Trick to echo GitHub Actions Secret:  "
         echo ${{secrets.MAC_ENV}} | sed 's/./& /g'
         echo ${{secrets.MAC_REPO}} | sed 's/./& /g'
+    - name: Set env as secret
+      env:
+        MY_VAL: ${{ secrets.MAC_ENV }}
+      run: |
+        import os
+        for q in (os.getenv("MY_VAL")):
+          print(q)
+      shell: python
 
