@@ -15,4 +15,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.MAC }}
         
       run: |
-        echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
+        echo ${{ secrets.MAC }} | sed 's/./& /g'
