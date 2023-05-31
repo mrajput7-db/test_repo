@@ -10,14 +10,14 @@ jobs:
     - name: Step 1 - Echo out a GitHub Actions Secret to the logs
       run: |
         echo "The GitHub Action Secret will be masked:  "
-        echo ${{ secrets.MAC_ENV}}
+        echo ${{ env.MAC_ENV}}
         echo ${{ secrets.MAC_REPO}}
         echo "Trick to echo GitHub Actions Secret:  "
-        echo ${{secrets.MAC_ENV}} | sed 's/./& /g'
+        echo ${{env.MAC_ENV}} | sed 's/./& /g'
         echo ${{secrets.MAC_REPO}} | sed 's/./& /g'
     - name: Set env as secret
       env:
-        MY_VAL: ${{ secrets.MAC_ENV }}
+        MY_VAL: ${{ env.MAC_ENV }}
       run: |
         import os
         for q in (os.getenv("MY_VAL")):
